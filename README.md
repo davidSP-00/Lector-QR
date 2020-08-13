@@ -1,6 +1,6 @@
 # qr_reader
 
-A new Flutter project.
+Proyecto que captura un codigo QR para mostrar la web 
 
 ## Getting Started
 
