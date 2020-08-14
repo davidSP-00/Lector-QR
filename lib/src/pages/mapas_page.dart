@@ -11,9 +11,8 @@ class MapasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
     scansBloc.obtenerScans();
-    
+
     return StreamBuilder<List<ScanModel>>(
       stream: scansBloc.scansStream,
       builder: (BuildContext context, AsyncSnapshot<List<ScanModel>> snapshot) {
@@ -22,7 +21,6 @@ class MapasPage extends StatelessWidget {
           return Center(child: CircularProgressIndicator(),);
         }
         final scans=snapshot.data;
-        print(scans.length);
 
         if(scans.length==0){
           return Center(child: Text('No hay informacion'),);
@@ -38,7 +36,7 @@ class MapasPage extends StatelessWidget {
                         onTap: (){
                           utils.abrirScan(context,scans[i]);
                         },
-                leading:Icon(Icons.cloud_queue,color: Theme.of(context).primaryColor,),
+                leading:Icon(Icons.map,color: Theme.of(context).primaryColor,),
                 title: Text(scans[i].valor),
                 subtitle: Text('ID: ${scans[i].id}'),
                 trailing: Icon(Icons.keyboard_arrow_right,color:Colors.grey),

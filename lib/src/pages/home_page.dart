@@ -50,25 +50,21 @@ class _HomePageState extends State<HomePage> {
     // https://www.google.com.pe
     // geo:-11.96225141696142,-77.06820860346683
 
-    String futureString = 'https://www.google.com.pe';
+    String futureString ;
 
-/*     try {
+    try {
       futureString=await BarcodeScanner.scan();
     } catch (e) {
       futureString=e.toString();
     }
 
     print('futureString: '+ futureString);
-    */
+   
     if (futureString != null) {
       final scan = ScanModel(valor: futureString);
 
       scansBloc.agregarScan(scan);
 
-      final scan2 =
-          ScanModel(valor: 'geo:-11.96225141696142,-77.06820860346683');
-
-      scansBloc.agregarScan(scan2);
 
       if(Platform.isIOS){
         Future.delayed(Duration(milliseconds: 750),(){
