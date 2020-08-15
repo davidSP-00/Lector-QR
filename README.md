@@ -1,4 +1,4 @@
-# qr_reader
+# Lector-QR
 
 Proyecto que captura un codigo QR
 
